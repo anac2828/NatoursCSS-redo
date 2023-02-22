@@ -1,0 +1,98 @@
+.form{
+  
+  &__group:not(:last-child){
+    margin-bottom: 2rem;
+  }
+
+  &__input{
+    font-size: 1.5rem;
+    color: inherit;
+    font-family: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    background-color: rgba($color-white, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+    transition: all .5s;
+
+    &:focus{
+      outline: none;
+      box-shadow: $box-shadow-hover-sm;
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid{
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder{
+      color: $color-gray-dark-2;
+    }
+  }
+
+  &__label{
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+
+  // when the placeholder is shown the labe will not be shown. "+" direct sibling selector
+  
+  &__input:placeholder-shown + &__label{
+    // opacity: 0;
+    visibility: hidden;
+    transform: translateY((-4rem));
+  }
+
+  &__radio-input{
+    display: none;
+  }
+
+  &__radio-group{
+    width: 49%;
+    display: inline-block;
+
+    @include respond(phone){
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__radio-label{
+    display: flex;
+    gap: 1.5rem;
+    font-size: $default-font-size;
+    cursor: pointer;
+  }
+
+  &__radio-button{
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $color-primary;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -2px;
+
+    &::after{
+      content: '';
+      display: block;
+      height: 1.2rem;
+      width: 1.2rem;
+      border-radius: 50%;
+      background-color: $color-primary;
+      opacity: 0;
+    }
+  }
+
+  // when the input radio is checked the sibling label will be selected than the child radio button (span::after) and make it visible
+  &__radio-input:checked ~ &__radio-label &__radio-button::after{
+    opacity: 1;
+  }
+}

@@ -1,0 +1,46 @@
+.header{
+  /* display: flex; */
+  /* justify-content: center; */
+  position: relative; /* links the potision to the child element 'logo-box' */
+  height: 95vh; /* 95 percent of the view port */
+  background-image:
+    linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
+    url(../img/hero-small.jpg);
+  background-size: cover; /* will fit width of the */
+  background-position: top;
+
+  /* clip-path: polygon(x y top left, x y top right, x y bottom right, x y bottom left ); */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
+
+  // the bigger resolution image will be shown when the screen dpi is bigger than 192 and the browser window is more than 600px or more than 2000px
+@media only screen and (min-resolution: 192dpi) and (min-width: 37.5em), only screen and (min-width: 125em){
+   background-image:
+    linear-gradient(to right bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)),
+    url(../img/hero.jpg);
+}
+
+  @include respond(phone){
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100% );
+  }
+
+  &__logo-box{
+     /* relative to the parent which needs to have position: absolute */
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  }
+
+  &__logo{
+    height: 3.5rem;
+  }
+
+  &__text-box{
+    position: absolute;
+    /* moves the top left corner of the element to the center of the parent */
+    top: 50%;
+    left: 50%;
+    /* Use translate to move the element to the center. Translate will move it relative to itself. */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

@@ -1,0 +1,39 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-gray-light-1: #f7f7f7f7;
+$color-gray-light-2: #eee;
+$color-gray-dark: #777;
+$color-gray-dark-2: #999;
+$color-gray-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+// FONT
+$default-font-size: 1.6rem;
+
+
+// GRID
+$grid-max-width: 114rem;
+$grid-max-width-tablet: 75rem;
+$grid-max-width-phone: 50rem;
+$grid-gap-md: 6rem;
+
+
+// SHADOW
+$box-shadow-1-opacity-1: 0 1.5rem 4rem rgba($color-black, .15);
+$box-shadow-3-opacity-3: 0 1.5rem 4rem rgba($color-black, .2);
+$box-shadow-2-opacity-2: 0 1.5rem 4rem rgba($color-black, .4);
+$box-shadow-large: 0 3rem 6rem rgba($color-black, .1);
+$box-shadow-hover-md: 0 2rem 2rem rgba($color-black, .2);
+$box-shadow-hover-sm: 0 1rem 2rem rgba($color-black, .15);
+$box-shadow-hover-big: 0 2.5rem 4rem rgba($color-black, .5);
+$box-shadow-active-1: 0 .5rem 1rem rgba($color-black, .15);

@@ -1,0 +1,44 @@
+/* reset browser settings */
+*, *::after, *::before {
+  margin:0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+html{
+  // This defines what 1rem is. 1rem = 10px because we set the font size to 10px. 10/16 = 62.5%
+  font-size: 62.5%;
+
+    @include respond(tablet-land){
+    // 1rem = 9px -- font size is 9/16=56.25% for screens less than 1200px
+    font-size: 56.25%;
+  }
+
+  // 1rem = 8px -- font size is 8/16= 50% for screens less than 900px
+  @include respond(tablet-port){
+    font-size: 50%;
+  }
+
+  @include respond(big-desktop){
+    // 1rem = 12px -- font size is 12/16= 75% for screens more than 1800px
+    font-size: 75%;
+  }
+}
+
+/* properties related to fonts are inherited. It is more efficient to put them on the  body element */
+
+body{
+  box-sizing: border-box;
+  /* padding will not get inherited */
+  padding: 3rem;
+
+  @include respond(tablet-port){
+    padding: 0;
+  }
+}
+
+::selection{
+  background-color: $color-primary;
+  color: $color-white;
+}
